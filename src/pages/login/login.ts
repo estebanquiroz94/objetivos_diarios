@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RegisterPage } from '../register/register';
 
 /**
  * Generated class for the LoginPage page.
@@ -32,9 +33,11 @@ export class LoginPage {
   }
 
   authenticateUser(){
-    console.log(this.data);
-    
-    
+    console.log(this.data);    
+  }
+
+  registerUser(){
+  this.navCtrl.push(RegisterPage)    
   }
 
 }
