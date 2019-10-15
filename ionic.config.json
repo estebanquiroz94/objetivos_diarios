@@ -1,5 +1,7 @@
 {
   "name": "objetivos_diarios",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

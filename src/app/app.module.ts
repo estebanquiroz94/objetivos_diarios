@@ -11,6 +11,8 @@ import { RegisterPage } from '../pages/register/register';
 import { RecoveryPage } from '../pages/recovery/recovery';
 import { ActivityFormPage } from '../pages/activity-form/activity-form';
 import { FormsModule } from '@angular/forms';
+import { PhotoLibrary } from '@ionic-native/photo-library/ngx';
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { FormsModule } from '@angular/forms';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ImagePicker
   ]
 })
 export class AppModule {}

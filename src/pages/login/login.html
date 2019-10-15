@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Login</ion-title>
+    <ion-title>User Login</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -16,18 +16,18 @@
     <img id="loginPicture" src="../../assets/imgs/loginPicture.jpg">
   </div>
 
-  <form [formGroup]='registerForm'>
+  <form [formGroup]='loginForm'>
     
     <ion-item>
       <ion-label staked>Username</ion-label>
       <ion-input placeholder="ejemplo@correo.com" type="text" formControlName="email" name="email" [(ngModel)]="data.email"></ion-input>
     </ion-item>
 
-    <ion-item *ngIf="registerForm.get('email').errors && registerForm.get('email').dirty">
-      <p style="white-space: normal; color:red;" *ngIf="registerForm.get('email').hasError('required')">
+    <ion-item *ngIf="loginForm.get('email').errors && loginForm.get('email').dirty">
+      <p style="white-space: normal; color:red;" *ngIf="loginForm.get('email').hasError('required')">
         Este campo es requerido!
       </p>
-      <p style="white-space: normal; color:red;" *ngIf="registerForm.get('email').hasError('email')">
+      <p style="white-space: normal; color:red;" *ngIf="loginForm.get('email').hasError('email')">
         Ingrese un correo válido!
       </p>
     </ion-item>
@@ -37,14 +37,14 @@
       <ion-input placeholder="*****" type="password" formControlName="password" name="password" [(ngModel)]="data['password']"></ion-input>
     </ion-item>
 
-    <ion-item *ngIf="registerForm.get('password').errors && registerForm.get('password').dirty">
-      <p style="white-space: normal; color:red;" *ngIf="registerForm.get('password').hasError('required')">
+    <ion-item *ngIf="loginForm.get('password').errors && loginForm.get('password').dirty">
+      <p style="white-space: normal; color:red;" *ngIf="loginForm.get('password').hasError('required')">
         Ingrese contraseña!
       </p>
     </ion-item>
 
     <div>
-      <button ion-button (click)="authenticateUser()" [disabled]="!registerForm.valid">Ingresar!</button>
+      <button ion-button (click)="authenticateUser()" [disabled]="!loginForm.valid">Ingresar!</button>
       <button ion-button (click)="registerUser()">Registrarse</button>
     </div>
 
